@@ -1,0 +1,17 @@
+main outer for loop
+<div class="_3liAhj">
+
+Image and title
+<img class="_1Nyybr _30XEf0" alt="Arrow Sport Men's Casual Shirt" src="https://rukminim1.flixcart.com/image/312/312/shirt/j/q/z/ares0845anavy-arrow-sports-39-original-imaemrxhxphpmnhg.jpeg?q=70">
+
+Title and href
+<a class="_2cLu-l" title="Arrow Sport Men's Casual Shirt" target="_blank" rel="noopener noreferrer" href="/arrow-sport-men-s-casual-shirt/p/itmevgxqnuzyvhzw?pid=SHTEHU6NCW6YPVVQ&amp;srno=s_1_1&amp;otracker=search&amp;lid=LSTSHTEHU6NCW6YPVVQZ2ZX06&amp;fm=SEARCH&amp;iid=9ec2e509-f6a6-48eb-be09-b38051cf3c6b.SHTEHU6NCW6YPVVQ.SEARCH&amp;qH=514ca2b2d46ccf67">Arrow Sport Men's Casual Shirt</a>
+
+Price and discount details
+<div class="_1uv9Cb">
+<div class="_1vC4OE">
+<!-- react-text: 6117 -->?<!-- /react-text --><!-- react-text: 6118 -->1,139<!-- /react-text --></div>
+<div class="_3auQ3N">
+<!-- react-text: 6120 -->?<!-- /react-text --><!-- react-text: 6121 -->1,899<!-- /react-text --></div>
+<div class="VGWI6T">
+<!-- react-text: 6123 -->40<!-- /react-text --><!-- react-text: 6124 -->% off<!-- /react-text --></div></div>

@@ -4,22 +4,21 @@ from bs4 import BeautifulSoup
 from nltk.tokenize import word_tokenize
 import HKF
 
-def flipkart(product,budget):
+def logic(product,budget):
 
     #defining necessary variables
     page=1
     i=1
     max_pages=1
 
-    #defining standard url pattern
+    #defining path and standard url pattern
+    path='D:/urvesh/Project/Program/2.csv'
     url='https://www.flipkart.com/search?as=off&as-show=on&otracker=start&page='+str(page)+'&q='+str(product)+'&viewType=grid'
 
     #scraping url into text format    
     source_code=requests.get(url)
     text=source_code.text
     soup=BeautifulSoup(text,'lxml')
-
-    print(soup)
 
     #for finding no. of pages each search may consist
     for max_p in soup.findAll(['span','a'], {'class': "_3v8VuN"}):
@@ -43,7 +42,9 @@ def flipkart(product,budget):
 
         #outer loop for finding products
         for prod_details in soup.findAll('div',{'class':'_3liAhj'}):
-
+##            for img in prod_details.findAll('img',{'class' : '_1Nyybr _30XEf0'}):  
+####                image=img.get('src')
+##
             #this loop extracts titles and links from the web page
             for details in prod_details.findAll('a',{'class' : '_2cLu-l'}):
 
@@ -60,35 +61,29 @@ def flipkart(product,budget):
                             #checking necessary condition
                             if(deal_price <= budget):
 
-                                for img in prod_details.findAll('img',{'class' : '_1Nyybr _30XEf0'}):  
-                                    image=img.get('src')
-                                    
+                                for np in price.findAll('div',{'class' : '_3auQ3N'}):
+                                    for dis in price.findAll('div',{'class' : 'VGWI6T'}):
 
-                                    for np in price.findAll('div',{'class' : '_3auQ3N'}):
-                                        for dis in price.findAll('div',{'class' : 'VGWI6T'}):
+                                        #replacing unnecessary things from norm_price like rupee symbol and comma
+                                        norm_price=np.text.replace(u'\u20b9','').replace(',','')
+                                        ##replacing unnecessary things from discount like off and %
+                                        discount=word_tokenize(dis.text)
+                                        discount=discount[0]
 
-                                            #replacing unnecessary things from norm_price like rupee symbol and comma
-                                            norm_price=np.text.replace(u'\u20b9','').replace(',','')
-                                            ##replacing unnecessary things from discount like off and %
-                                            discount=word_tokenize(dis.text)
-                                            discount=discount[0]
+                                        #printing everything
+                                        print('\nProduct id :' + str(i))
+                                        print('Name of the product : ' + title)
+                                        print('Discount : '+ str(discount) +'%')     
+                                        print('Deal Price : Rs. ' + str(deal_price))
+                                        print('Normal Price : Rs. ' + str(norm_price))
+                                        print('Product link : '+ link+'\n')
 
-                                            #printing everything
-                                            print('\nProduct id :' + str(i))
-                                            print('Name of the product : ' + title)
-                                            print('Image Link : ' + image)
-                                            print('Discount : '+ str(discount) +'%')     
-                                            print('Deal Price : Rs. ' + str(deal_price))
-                                            print('Normal Price : Rs. ' + str(norm_price))
-                                            print('Product link : '+ link+'\n')
-                                            
+                                        #merging every variable and converting into excel sheet (.csv format)
+                                        info=str(str(i)+','+str(title)+','+str(deal_price)+','+str(norm_price)+',')
+                                        HKF.write_file(path,link,info)
 
-                                            #merging every variable and converting into excel sheet (.csv format)
-                                            info=str(str(i)+','+str(title)+','+str(deal_price)+','+str(norm_price)+',')
-                                            HKF.write_file(link,info)
-
-                                            #Incrementing product id
-                                            i+=1
+                                        #Incrementing product id
+                                        i+=1
                             else:
                             #do nothing
                                pass

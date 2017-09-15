@@ -1,13 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
 
-def aliexpress():
+def aliexpress(product,budget):
     
-    product_name=raw_input("Search for products... ")
     pages=1
     max_pages=2
 
-    url='http://www.aliexpress.com/wholesale?catId=0&initiative_id=SB_20170821004256&SearchText='+str(product_name)
+    url='http://www.aliexpress.com/wholesale?catId=0&initiative_id=SB_20170821004256&SearchText='+str(product)
 
     while(pages<=max_pages):
 
@@ -18,9 +17,7 @@ def aliexpress():
         source_code=requests.get(url)
         text=source_code.text
         soup=BeautifulSoup(text,'lxml')
-
-        print(soup)
-        
+    
         for page in soup.findAll('div',{'class' : 'ui-pagination-navi util-left'}):
                             
             for link in page.findAll('a',{'class' : 'page-next ui-pagination-next'}):
@@ -43,4 +40,3 @@ def aliexpress():
                     print('\nName of the product : ' + str(title))
                     print('Product link :'+str(link)+'\n')
 
-aliexpress()

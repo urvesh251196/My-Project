@@ -7,7 +7,6 @@ import HKF
 def logic(max_pages):
     page=2
     i=1
-    path=os.path.join('D:/urvesh/Desktop/Urvesh/1.csv')
     if page<=max_pages:
         url='https://paytm.com/shop/g/watches?src=1&q=watches'
         source_code=requests.get(url)
@@ -26,6 +25,6 @@ def logic(max_pages):
                     print(deal)
                     
                     print('https://paytmmall.com'+link)
-                    HKF.write_file(path,link,info)
+                    HKF.write_file(link,info)
                 else:
                     pass        

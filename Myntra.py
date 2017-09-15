@@ -9,7 +9,7 @@ def logic(max_pages):
     page=1
     #i=1
     product_link='https://www.myntra.com'
-    #path=os.path.join('D:/urvesh/Desktop/Urvesh/1.csv')
+    
     while page<=max_pages:
         
         page+=1
@@ -44,7 +44,7 @@ def logic(max_pages):
                     #    print(result)
                     #    links='https://www.flipkart.com'+link
                     #    print(links)
-                    #    #write_file(path,links,info)
+                    #    #write_file(links,info)
                     #else:
                     #    pass
                     #

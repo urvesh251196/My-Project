@@ -12,12 +12,11 @@ from nltk.tokenize import word_tokenize
 import os
 import HKF
 
-def amazon():
+def amazon(product,budget):
 
     pages=1
     max_pages=1
-    product_name=raw_input("Enter product name : ")
-    budget=input("Enter your budget : ")
+
     base_url='http://www.amazon.in/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords='+str(product_name)+'&rh=i%3Aaps%2Ck%3A'+str(product_name)
 
     while pages<=max_pages:    
