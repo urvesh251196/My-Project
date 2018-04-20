@@ -1,0 +1,17 @@
+outer loop
+<div class="a-fixed-left-grid-col a-col-right" style="padding-left:2%;*width:97.6%;float:left;">
+
+title and link
+<a class="a-link-normal s-access-detail-page  s-color-twister-title-link a-text-normal" title="Introduction to Algorithms (Eastern Economy Edition)" href="https://www.amazon.in/Introduction-Algorithms-Eastern-Economy-Thomas/dp/8120340078/ref=sr_1_1?ie=UTF8&amp;qid=1503415116&amp;sr=8-1&amp;keywords=cormen" target="_blank"><h2 data-attribute="Introduction to Algorithms (Eastern Economy Edition)" data-max-rows="0" class="a-size-medium s-inline  s-access-title  a-text-normal">Introduction to Algorithms (Eastern Economy Edition)</h2></a>
+
+deal price
+<span class="a-size-base a-color-price s-price a-text-bold"><span class="currencyINR">&nbsp;&nbsp;</span>995</span>
+
+normal price
+<span aria-label="Suggested Retail Price: <span class=&quot;currencyINR&quot;>&amp;nbsp;&amp;nbsp;</span>1,695" class="a-size-small a-color-secondary a-text-strike"><span class="currencyINR">&nbsp;&nbsp;</span>1,695</span>
+
+next page
+<span class="pagnLink"><a href="/s/ref=sr_pg_2?rh=i%3Aaps%2Ck%3Acormen&amp;page=2&amp;keywords=cormen&amp;ie=UTF8&amp;qid=1503415116">2</a></span>
+
+maxpages
+<span class="pagnDisabled">6</span>
